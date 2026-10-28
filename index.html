@@ -3,71 +3,199 @@
   <head>
     <meta charset="UTF-8">
     <title>Exercise 6: Banh Mi, menus, and layout</title>
-    
- <!-- These are the embed codes for the two google fonts in our document, we will learn about google fonts next week -->
+
+    <!-- These are the embed codes for the two google fonts in our document, we will learn about google fonts next week -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Ledger&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Ledger&display=swap" rel="stylesheet">
+
     <style>
+      * {
+        box-sizing: border-box;
+      }
+
+
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
 
       body {
-      font-family: "Ledger", serif;
-      font-weight: 400;
-      font-style: normal;  
+        background-color: #f7f0e5;
+        color: #673C33;
+        margin: 0;
+        padding: 30px;
+        line-height: 1.6;
+        font-family: "Ledger", serif;
+        font-weight: 400;
+        font-style: normal;
       }
-      
-      h1 , h2 , ul {
-      font-family: "Inter Tight", sans-serif;
-      font-optical-sizing: auto;
-      font-style: normal;
-      }
-      
-      h1 {
-      font-weight: 600;
-      }
-      
-      h2 {
-      font-weight: 500;
-      }
-      
+
+      h1,
+      h2,
       ul {
-      font-weight: 700;
+        font-family: "Inter Tight", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
       }
-      
+
+      .site-title {
+        font-size: 46px;
+        font-weight: 700;
+        color: #673C33;
+        text-align: center;
+        margin: 30px 0;
+      }
+
+      .hero-title {
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: #673C33;
+        margin: 50px 0 35px;
+      }
+
+      h2 {
+        font-weight: 500;
+        font-size: 24px;
+        color: #cf541c;
+        margin: 20px 0 10px;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #cf541c;
+        font-weight: bold;
+        border-bottom: 2px solid transparent;
+      }
+
+      nav a:hover {
+        color: #7ca2e0;
+        border-bottom-color: #7ca2e0;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin: 40px auto;
+      }
+
+      .grid-item {
+        background-color: #fffcf7;
+        padding: 0px;
+        border-radius: 12px;
+        overflow: hidden;
+        text-align: center;
+      }
+
+      .grid-item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+      }
+
+      .grid-item h2 {
+        text-align: center;
+        margin: 24px 20px 12px;
+      }
+
+      .grid-item p {
+        font-size: 14px;
+        text-align: left;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0 24px 28px;
+      }
+
+      footer {
+        background-color: #673C33;
+        color: #f7f0e5;
+        text-align: center;
+        width: 100%;
+        max-width: 1100px;
+        margin: 50px auto 0;
+
+        padding: 50px 40px;
+        border-radius: 16px;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+
+        nav ul {
+          gap: 12px;
+          flex-wrap: wrap;
+        }
+
+        h1 {
+          font-size: 30px;
+        }
+      }
     </style>
   </head>
   <body>
 
-    <h1>Greg’s Banh Mi</h1>
+    <h1 class="site-title"> 🥖 Greg’s Banh Mi ฅ՞•ﻌ•՞ฅ🥬</h1>
 
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Menu</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
 
-    <h1>At Greg’s Banh Mi, we’re serving up the perfect marriage of French and Vietnamese culinary traditions&mdash;crispy-on-the-outside, pillowy-on-the-inside baguettes loaded with bold, fresh flavours that'll make your taste buds sing.</h1>
+    <h1 class="hero-title"> At Greg’s Banh Mi, we’re serving up the perfect marriage of French and Vietnamese culinary traditions&mdash;crispy-on-the-outside, pillowy-on-the-inside baguettes loaded with bold, fresh flavours that'll make your taste buds sing.</h1>
 
-    <h2>Classic Pork Banh Mi</h2>
-    <p>Tender marinated pork topped with crisp pickled vegetables, fresh cilantro, and a smear of p&acirc;t&eacute; on a perfectly crusty baguette. A traditional favorite that balances savory, sweet, and tangy flavors in every bite.</p>
+    <div class="container">
 
-    <h2>Lemongrass Chicken Banh Mi</h2>
-    <p>Grilled chicken marinated in fragrant lemongrass and garlic, paired with cucumber, jalape&ntilde;os, and our house mayo. Light yet satisfying, this sandwich brings bright, aromatic flavors that'll transport you straight to Saigon.</p>
+      <div class="grid-item">
+        <img src="banh-mi.jpg" alt="Vietnamese banh mi sandwich filled with meat, vegetables, and herbs on a wooden table">
+        <h2>Classic Pork Banh Mi 🥖</h2>
+        <p>Tender marinated pork topped with crisp pickled vegetables, fresh cilantro, and a smear of p&acirc;t&eacute; on a perfectly crusty baguette. A traditional favorite that balances savory, sweet, and tangy flavors in every bite.</p>
+      </div>
 
-    <h2>Tofu Banh Mi</h2>
-    <p>Crispy pan-fried tofu glazed in sweet soy sauce, layered with daikon, carrots, and fresh herbs for a vegetarian delight. Proof that plant-based can be just as bold and craveable as any meat-filled sandwich.</p>
+      <div class="grid-item">
+        <img src="banh-mi.jpg" alt="Vietnamese banh mi sandwich filled with meat, vegetables, and herbs on a wooden table">
+        <h2>Lemongrass Chicken Banh Mi 🍋</h2>
+        <p>Grilled chicken marinated in fragrant lemongrass and garlic, paired with cucumber, jalape&ntilde;os, and our house mayo. Light yet satisfying, this sandwich brings bright, aromatic flavors that'll transport you straight to Saigon.</p>
+      </div>
 
-    <h2>Five-Spice Beef Banh Mi</h2>
-    <p>Thinly sliced beef seared with aromatic five-spice blend and served with pickled vegetables and spicy Sriracha mayo. Rich, warming spices meet cool, crunchy toppings for an unforgettable flavor experience.</p>
+      <div class="grid-item">
+        <img src="banh-mi.jpg" alt="Vietnamese banh mi sandwich filled with meat, vegetables, and herbs on a wooden table">
+        <h2>Tofu Banh Mi 🌱</h2>
+        <p>Crispy pan-fried tofu glazed in sweet soy sauce, layered with daikon, carrots, and fresh herbs for a vegetarian delight. Proof that plant-based can be just as bold and craveable as any meat-filled sandwich.</p>
+      </div>
+
+      <div class="grid-item">
+        <img src="banh-mi.jpg" alt="Vietnamese banh mi sandwich filled with meat, vegetables, and herbs on a wooden table">
+        <h2>Five-Spice Beef Banh Mi 🌶️</h2>
+        <p>Thinly sliced beef seared with aromatic five-spice blend and served with pickled vegetables and spicy Sriracha mayo. Rich, warming spices meet cool, crunchy toppings for an unforgettable flavor experience.</p>
+      </div>
+
+    </div>
 
     <footer>
-      <p>Because life’s too short for boring sandwiches. Greg’s got you covered&mdash;one crispy baguette at a time.</p>
+      <p>Because life’s too short for boring sandwiches. Greg’s got you covered&mdash;one crispy baguette at a time. (๑ᵔ⤙ᵔ๑) 🥖</p>
     </footer>
 
   </body>
